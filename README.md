@@ -1,6 +1,10 @@
 # autobuild-caddy
 
-builds caddy with the specified plugins from `plugins.txt`
+Builds [caddy](https://caddyserver.com/) with the specified plugins from `plugins.txt`.
+
+If you want to support [caddy](https://caddyserver.com/), consider buying a license or sponsoring their project!
+
+I am in no way associated or affiliated with the original project.
 
 ## requirements
 
