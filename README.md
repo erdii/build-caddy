@@ -14,6 +14,7 @@ I am in no way associated or affiliated with the original project.
 ## usage
 
 1. put url's to the wanted plugin repos in `plugins.txt`. **THE FILE MUST END WITH AN EMPTY LINE**
+1. edit the line `CADDY_VERSION="v0.10.9"` to your wanted version (git tag) in `build.sh`
 1. execute `./build.sh`
 1. the built caddy binary resides in `./build`
 
