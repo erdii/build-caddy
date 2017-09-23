@@ -1,4 +1,4 @@
-# autobuild-caddy
+# build-caddy
 
 Builds [caddy](https://caddyserver.com/) with the specified plugins from `plugins.txt`.
 
