@@ -1,7 +1,7 @@
 #! /bin/sh -e
 LINE_SCRIPT=./get_plugin_line.sh
 CADDY_SRC_PATH="src/github.com/mholt/caddy"
-CADDY_VERSION="v0.10.9"
+CADDY_VERSION="v0.10.12"
 RUN_GO="$CADDY_SRC_PATH/caddy/caddymain/run.go"
 CWD=$(pwd)
 
@@ -30,9 +30,6 @@ cat plugins.txt | while read -r a; do echo "\t_ \"$a\"" >> $RUN_GO.new; done
 tail -n +$NEXT_LINE $RUN_GO >> $RUN_GO.new
 rm $RUN_GO
 mv $RUN_GO.new $RUN_GO
-
-echo "patching httpserver/server.go to disable caddy-sponsors header - this should not be needed after the next release"
-sed -i '/sponsors/d' $CADDY_SRC_PATH/caddyhttp/httpserver/server.go
 
 echo "use a local go environment"
 export GOPATH=$(pwd)
