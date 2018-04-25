@@ -1,7 +1,7 @@
 #! /bin/sh -e
 LINE_SCRIPT=./get_plugin_line.sh
 CADDY_SRC_PATH="src/github.com/mholt/caddy"
-CADDY_VERSION="v0.10.12"
+CADDY_VERSION="v0.10.14"
 RUN_GO="$CADDY_SRC_PATH/caddy/caddymain/run.go"
 CWD=$(pwd)
 
@@ -42,7 +42,14 @@ go get github.com/caddyserver/builds
 
 echo "build"
 cd $CADDY_SRC_PATH/caddy
+echo "linux"
 go run build.go -goos=linux -goarch=amd64
-mv caddy $CWD/build
+mv caddy $CWD/build/caddy_linux
+echo "darwin"
+go run build.go -goos=darwin -goarch=amd64
+mv caddy $CWD/build/caddy_darwin
+echo "windows"
+go run build.go -goos=windows -goarch=amd64
+mv caddy.exe $CWD/build/caddy_windows.exe
 
 echo "\nbuild finished. have a look at ./build"

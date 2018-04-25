@@ -7,3 +7,4 @@ github.com/captncraig/caddy-realip
 github.com/xuqingfeng/caddy-rate-limit
 github.com/hacdias/caddy-minify
 github.com/echocat/caddy-filter
+github.com/coopernurse/caddy-awslambda
